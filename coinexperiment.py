@@ -2,7 +2,16 @@ import random
 numberOfstreaks=0
 list1=[]
 print("Enter how much times the experiment should be repeated")
-noOfexp=int(input())
+while True:
+    try:
+        noOfexp=int(input())
+        if noOfexp<0:
+            print("Please enter a poistive integer")
+            continue
+        else:
+            break
+    except ValueError:
+        print("Please enter a poistive integer")
 print("Calculating...")
 for experimentNumber in range(noOfexp):
     while True:
@@ -39,7 +48,6 @@ for experimentNumber in range(noOfexp):
                 break
 print("streak:",numberOfstreaks)
 print('Chance of streak:',(numberOfstreaks / (noOfexp/100)),"%")
-
 
     
     
